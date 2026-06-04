@@ -1,10 +1,12 @@
-import { createElement } from "react";
+﻿import { createElement } from "react";
 import {
   ArrowRight,
   BadgeCheck,
   BrainCircuit,
   Check,
+  Download,
   ExternalLink,
+  FileText,
   Layers3,
   Mail,
   MessageCircle,
@@ -33,6 +35,7 @@ function App() {
       <SiteHeader />
       <Hero />
       <OfferSection />
+      <LeadMagnetSection />
       <WhySection />
       <WhatYouGetSection />
       <ExperimentsSection />
@@ -65,6 +68,9 @@ function SiteHeader() {
         <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-300 md:flex">
           <a className="transition hover:text-white" href="#offer">
             Offer
+          </a>
+          <a className="transition hover:text-white" href="#prompt-pack">
+            Free Pack
           </a>
           <a className="transition hover:text-white" href="#deliverables">
             Deliverables
@@ -329,6 +335,120 @@ function OfferSection() {
   );
 }
 
+function LeadMagnetSection() {
+  const { leadMagnet } = siteContent;
+
+  return (
+    <Section id="prompt-pack" eyebrow={leadMagnet.badge}>
+      <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.055] p-5 shadow-[0_0_70px_rgba(96,244,255,0.16)] backdrop-blur-2xl sm:p-7 lg:p-9">
+        <div className="pointer-events-none absolute -left-24 top-12 h-64 w-64 rounded-full bg-ion/10 blur-3xl" />
+        <div className="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-ember/10 blur-3xl" />
+        <div className="pointer-events-none absolute inset-0 opacity-[0.16] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:54px_54px]" />
+
+        <div className="relative grid gap-10 lg:grid-cols-[1fr_0.88fr] lg:items-center">
+          <div>
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-volt/25 bg-volt/10 px-4 py-2 text-sm font-semibold text-volt">
+              <Sparkles className="h-4 w-4" />
+              Free, direct download
+            </div>
+            <h2 className="max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl">
+              {leadMagnet.title}
+            </h2>
+            <p className="mt-5 max-w-2xl text-xl leading-8 text-slate-100">
+              {leadMagnet.hook}
+            </p>
+            <p className="mt-5 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+              {leadMagnet.body}
+            </p>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <DownloadButton href={leadMagnet.pdfUrl} icon={FileText} label="Download PDF" />
+              <DownloadButton href={leadMagnet.wordUrl} icon={Download} label="Download Word Version" />
+            </div>
+            <p className="mt-4 text-sm leading-6 text-slate-500">
+              No gate. No form. The buttons above link straight to the files.
+            </p>
+          </div>
+
+          <div className="relative rounded-[28px] border border-white/10 bg-carbon/[0.82] p-5 shadow-glow">
+            <div className="absolute -inset-1 -z-10 rounded-[30px] bg-gradient-to-br from-ion/[0.22] via-transparent to-volt/[0.14] blur-xl" />
+            <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-5">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.28em] text-ion">
+                  Prompt Pack
+                </p>
+                <h3 className="mt-2 font-display text-2xl font-semibold text-white">
+                  What's inside
+                </h3>
+              </div>
+              <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-ion/30 bg-ion/10 text-ion">
+                <FileText className="h-7 w-7" />
+              </div>
+            </div>
+
+            <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+              {leadMagnet.inside.map((item) => (
+                <div
+                  key={item}
+                  className="flex min-h-14 items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.055] px-4 py-3 text-sm font-semibold text-slate-100"
+                >
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-ion/[0.13] text-ion">
+                    <Check className="h-4 w-4" />
+                  </span>
+                  {item}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.045] p-4">
+              <p className="text-sm font-semibold text-white">Two formats included</p>
+              <p className="mt-2 text-sm leading-6 text-slate-400">
+                Use the PDF for quick reading and the Word version when you want to edit, remix, or adapt the prompts.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative mt-8 rounded-3xl border border-white/10 bg-void/[0.46] p-5 backdrop-blur-xl sm:p-6">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-3xl">
+              <p className="font-display text-2xl font-semibold text-white">
+                Want the next drop?
+              </p>
+              <p className="mt-3 text-sm leading-6 text-slate-300 sm:text-base sm:leading-7">
+                The prompt pack is free. No form needed. But if you want more AI prompts, content systems, growth breakdowns, and practical tools, join the Mr Savannah AI list.
+              </p>
+            </div>
+            <a
+              href={leadMagnet.newsletterUrl}
+              className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/[0.14] bg-white/[0.07] px-5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:border-ion/35 hover:bg-ion/10 sm:w-auto"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Join the AI List
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+function DownloadButton({ href, icon: Icon, label }) {
+  return (
+    <a
+      href={href}
+      className="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-ion px-6 py-3 text-sm font-bold text-void shadow-glow transition hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_0_48px_rgba(96,244,255,0.38)] sm:w-auto"
+      target="_blank"
+      rel="noreferrer"
+      download
+    >
+      {renderIcon(Icon, "h-5 w-5")}
+      {label}
+    </a>
+  );
+}
 function WhySection() {
   return (
     <Section id="why" eyebrow="Why It Matters" className="relative">
@@ -719,3 +839,5 @@ function renderIcon(Icon, className) {
 }
 
 export default App;
+
+

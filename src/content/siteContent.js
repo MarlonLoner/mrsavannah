@@ -1,4 +1,4 @@
-export const siteContent = {
+﻿export const siteContent = {
   brand: {
     name: "Mr Savannah",
     year: new Date().getFullYear(),
@@ -49,6 +49,25 @@ export const siteContent = {
         "Design realistic AI video prompts, repeatable formats, and workflow steps you can reuse without guessing.",
     },
   ],
+  leadMagnet: {
+    badge: "Free Resource",
+    title: "Free AI Marketing Prompt Pack",
+    hook:
+      "Marketing feels hard when every task starts from zero. So I built a prompt pack to help you move faster.",
+    body:
+      "Download the free Mr Savannah AI Marketing Prompt Pack and use it to create better captions, offers, customer messages, content ideas, sales scripts, and campaign angles without staring at a blank screen like it owes you money.",
+    pdfUrl: "/downloads/Mr_Savannah_AI_Marketing_Starter_Kit.pdf",
+    wordUrl: "/downloads/Mr_Savannah_AI_Marketing_Starter_Kit.docx",
+    newsletterUrl: "https://form.jotform.com/261546806267060",
+    inside: [
+      "Caption prompts",
+      "Offer prompts",
+      "Sales message prompts",
+      "Content idea prompts",
+      "Customer follow-up prompts",
+      "Campaign angle prompts",
+    ],
+  },
   checklist: [
     "One-day project and offer analysis",
     "AI video generation workflow for your niche",
@@ -103,3 +122,5 @@ export const siteContent = {
     },
   ],
 };
+
+
