@@ -7,7 +7,6 @@ import {
   Download,
   ExternalLink,
   FileText,
-  Layers3,
   Mail,
   MessageCircle,
   Orbit,
@@ -549,53 +548,182 @@ function WhatYouGetSection() {
 }
 
 function ExperimentsSection() {
-  return (
-    <Section id="experiments" eyebrow="Proof / Latest Posts">
-      <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
-        <div>
-          <h2 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
-            Latest experiments
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
-            Built as intentional embed slots for real public tests, AI video
-            experiments, and social proof as the content system evolves.
-          </p>
-        </div>
-        <Button href="#booking" variant="ghost">
-          Build yours next
-          <ArrowRight className="h-5 w-5" />
-        </Button>
-      </div>
+  const thumbnails = {
+    reel: ReelExperimentThumbnail,
+    sprint: SprintExperimentThumbnail,
+    thread: ThreadExperimentThumbnail,
+  };
 
-      <div className="mt-10 grid gap-5 md:grid-cols-3">
-        {siteContent.experiments.map((post) => (
-          <article
-            key={post.title}
-            className="group rounded-[28px] border border-white/10 bg-white/[0.06] p-5 backdrop-blur-xl transition hover:-translate-y-1 hover:border-ion/30 hover:bg-white/[0.09]"
-          >
-            {/* Replace this placeholder block with Facebook, Instagram, TikTok, or X embed code when ready. */}
-            <div className="mb-5 grid aspect-[4/3] place-items-center overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_50%_35%,rgba(96,244,255,0.25),rgba(255,255,255,0.05)_34%,rgba(5,6,12,0.74)_72%)]">
-              <div className="text-center">
-                <Layers3 className="mx-auto h-8 w-8 text-ion" />
-                <p className="mt-3 text-xs font-bold uppercase tracking-[0.28em] text-slate-400">
-                  Embed Slot
+  return (
+    <Section id="experiments" eyebrow="AI Content Lab">
+      <div className="relative overflow-hidden rounded-[34px] border border-white/10 bg-white/[0.045] p-5 shadow-[0_0_80px_rgba(96,244,255,0.1)] backdrop-blur-2xl sm:p-7 lg:p-8">
+        <div className="pointer-events-none absolute -left-28 top-10 h-72 w-72 rounded-full bg-ion/10 blur-3xl" />
+        <div className="pointer-events-none absolute -right-28 bottom-0 h-72 w-72 rounded-full bg-plasma/10 blur-3xl" />
+        <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] [background-size:62px_62px]" />
+
+        <div className="relative flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div>
+            <h2 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
+              Latest Experiments
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
+              I test AI content systems in public, then turn what works into repeatable workflows.
+            </p>
+          </div>
+          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-ion/25 bg-ion/10 px-4 py-2 text-sm font-semibold text-ion">
+            <Radar className="h-4 w-4" />
+            Live lab slots
+          </div>
+        </div>
+
+        <div className="relative mt-10 grid gap-5 md:grid-cols-3">
+          {siteContent.experiments.map((post) => {
+            const Thumbnail = thumbnails[post.variant] || ReelExperimentThumbnail;
+
+            return (
+              <article
+                key={post.title}
+                className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-carbon/[0.72] p-5 shadow-[0_20px_70px_rgba(0,0,0,0.24)] backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-ion/35 hover:bg-white/[0.08] hover:shadow-[0_24px_80px_rgba(96,244,255,0.15)]"
+              >
+                <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 transition group-hover:opacity-100" />
+                {/* Replace this designed preview with Facebook, Instagram, TikTok, or X embed code when ready. */}
+                <Thumbnail />
+                <p className="text-xs font-bold uppercase tracking-[0.24em] text-ember">
+                  {post.platform}
                 </p>
-              </div>
-            </div>
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-ember">
-              {post.platform}
-            </p>
-            <h3 className="mt-3 font-display text-xl font-semibold">
-              {post.title}
-            </h3>
-            <p className="mt-3 text-sm leading-6 text-slate-300">
-              {post.description}
-            </p>
-            <PostLink href={post.href} />
-          </article>
-        ))}
+                <h3 className="mt-3 font-display text-xl font-semibold text-white">
+                  {post.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-slate-300">
+                  {post.description}
+                </p>
+                <PostLink href={post.href} />
+              </article>
+            );
+          })}
+        </div>
+
+        <div className="relative mt-10 flex flex-col items-start justify-between gap-4 rounded-3xl border border-white/10 bg-void/[0.48] p-5 backdrop-blur-xl sm:flex-row sm:items-center sm:p-6">
+          <p className="font-display text-2xl font-semibold text-white">
+            Want the system behind these experiments?
+          </p>
+          <Button href="#booking" variant="primary">
+            Book the AI Day
+            <ArrowRight className="h-5 w-5" />
+          </Button>
+        </div>
       </div>
     </Section>
+  );
+}
+
+function ReelExperimentThumbnail() {
+  return (
+    <div className="relative mb-5 aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_50%_32%,rgba(143,125,255,0.32),rgba(96,244,255,0.12)_38%,rgba(5,6,12,0.92)_78%)]">
+      <ThumbnailShimmer />
+      <div className="absolute left-4 top-4 z-10 rounded-full border border-ion/25 bg-ion/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-ion">
+        REEL TEST
+      </div>
+      <div className="absolute right-4 top-4 z-10 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-300">
+        <span className="h-2 w-2 rounded-full bg-ember shadow-[0_0_16px_rgba(255,111,97,0.8)]" />
+        REC
+      </div>
+      <div className="absolute inset-4 rounded-xl border border-white/10" />
+      <div className="absolute left-6 top-6 h-6 w-6 border-l border-t border-ion/50" />
+      <div className="absolute right-6 top-6 h-6 w-6 border-r border-t border-ion/50" />
+      <div className="absolute bottom-6 left-6 h-6 w-6 border-b border-l border-ion/50" />
+      <div className="absolute bottom-6 right-6 h-6 w-6 border-b border-r border-ion/50" />
+
+      <div className="absolute left-1/2 top-1/2 aspect-[9/16] h-[70%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-[24px] border border-white/15 bg-void/70 shadow-[0_0_45px_rgba(96,244,255,0.2)]">
+        <div className="absolute inset-0 bg-[linear-gradient(160deg,rgba(96,244,255,0.16),transparent_42%,rgba(143,125,255,0.18))]" />
+        <div className="absolute left-1/2 top-[24%] h-12 w-12 -translate-x-1/2 rounded-full border border-ion/40 bg-ion/20 shadow-glow" />
+        <div className="absolute left-1/2 top-[43%] h-24 w-24 -translate-x-1/2 rounded-t-[999px] border border-plasma/40 bg-plasma/15" />
+        <div className="absolute inset-x-5 top-[61%] space-y-2">
+          <span className="block h-1 rounded-full bg-ion/70" />
+          <span className="block h-1 rounded-full bg-white/25" />
+          <span className="block h-1 w-2/3 rounded-full bg-white/15" />
+        </div>
+      </div>
+
+      <p className="absolute bottom-4 left-4 right-4 text-sm font-semibold text-white">
+        Founder Story Clip
+      </p>
+    </div>
+  );
+}
+
+function SprintExperimentThumbnail() {
+  const chips = [
+    ["Hook", "left-4 top-[30%]"],
+    ["Scene", "right-4 top-[24%]"],
+    ["Prompt", "left-5 bottom-[25%]"],
+    ["Caption", "right-5 bottom-[21%]"],
+  ];
+
+  return (
+    <div className="relative mb-5 aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_50%_50%,rgba(96,244,255,0.24),rgba(255,111,97,0.1)_38%,rgba(5,6,12,0.92)_76%)]">
+      <ThumbnailShimmer />
+      <div className="absolute left-4 top-4 z-10 rounded-full border border-ember/25 bg-ember/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-ember">
+        CONTENT SPRINT
+      </div>
+      <div className="absolute left-1/2 top-1/2 aspect-[9/16] h-[72%] -translate-x-1/2 -translate-y-1/2 rounded-[28px] border border-white/20 bg-void p-2 shadow-[0_0_50px_rgba(96,244,255,0.24)]">
+        <div className="relative h-full overflow-hidden rounded-[22px] border border-white/10 bg-[linear-gradient(180deg,rgba(96,244,255,0.18),rgba(143,125,255,0.1),rgba(255,111,97,0.14))]">
+          <div className="absolute inset-x-0 top-0 h-1/2 bg-[radial-gradient(circle_at_50%_35%,rgba(255,255,255,0.22),transparent_44%)]" />
+          <Play className="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 text-white/85" />
+          <div className="absolute inset-x-4 bottom-5 space-y-2">
+            <span className="block h-1 rounded-full bg-white/50" />
+            <span className="block h-1 w-3/4 rounded-full bg-ion/60" />
+          </div>
+        </div>
+      </div>
+      {chips.map(([label, position]) => (
+        <span
+          key={label}
+          className={`absolute ${position} rounded-full border border-white/10 bg-white/[0.08] px-3 py-1 text-[11px] font-bold text-white shadow-[0_0_22px_rgba(96,244,255,0.12)] backdrop-blur-xl transition group-hover:border-ion/30 group-hover:bg-ion/10`}
+        >
+          {label}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function ThreadExperimentThumbnail() {
+  const steps = ["Prompt", "Visual", "Script", "Post"];
+
+  return (
+    <div className="relative mb-5 aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_24%_25%,rgba(196,255,77,0.14),transparent_32%),radial-gradient(circle_at_78%_70%,rgba(96,244,255,0.18),transparent_34%),rgba(5,6,12,0.92)]">
+      <ThumbnailShimmer />
+      <div className="absolute left-4 top-4 z-10 rounded-full border border-volt/25 bg-volt/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-volt">
+        THREAD MAP
+      </div>
+      <div className="absolute inset-x-5 bottom-5 top-14 rounded-xl border border-white/10 bg-white/[0.035] p-4">
+        <div className="absolute left-1/2 top-1/2 h-px w-[70%] -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-ion/10 via-ion/70 to-ion/10" />
+        <div className="absolute left-1/2 top-1/2 h-[58%] w-px -translate-x-1/2 -translate-y-1/2 bg-gradient-to-b from-plasma/10 via-plasma/70 to-plasma/10" />
+        <div className="relative grid h-full grid-cols-2 gap-4">
+          {steps.map((step, index) => (
+            <div
+              key={step}
+              className="relative grid place-items-center rounded-2xl border border-white/10 bg-carbon/80 px-3 text-center text-sm font-semibold text-white shadow-[0_0_24px_rgba(96,244,255,0.1)]"
+            >
+              <span className="absolute -top-2 left-1/2 h-4 w-4 -translate-x-1/2 rounded-full border border-ion/40 bg-ion/20" />
+              <span className="text-xs uppercase tracking-[0.16em] text-slate-100">
+                {step}
+              </span>
+              {index < steps.length - 1 && (
+                <ArrowRight className="absolute -right-4 top-1/2 hidden h-4 w-4 -translate-y-1/2 text-ion/80 sm:block" />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ThumbnailShimmer() {
+  return (
+    <div className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/2 skew-x-[-18deg] bg-gradient-to-r from-transparent via-white/[0.08] to-transparent opacity-0 transition duration-700 group-hover:left-full group-hover:opacity-100" />
   );
 }
 
@@ -722,10 +850,10 @@ function Footer() {
 function PostLink({ href }) {
   if (href === "#") {
     return (
-      <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-slate-500">
-        View post
-        <span className="rounded-full border border-white/10 px-2 py-1 text-[10px] uppercase tracking-[0.18em]">
-          add link
+      <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-slate-400">
+        Experiment slot
+        <span className="rounded-full border border-ion/15 bg-ion/[0.06] px-2 py-1 text-[10px] uppercase tracking-[0.18em] text-ion">
+          Post link soon
         </span>
       </span>
     );
@@ -839,5 +967,4 @@ function renderIcon(Icon, className) {
 }
 
 export default App;
-
 

@@ -79,6 +79,7 @@
   experiments: [
     {
       platform: "Instagram",
+      variant: "reel",
       title: "Realistic AI founder clip",
       description:
         "A short-form test slot for founder-story videos produced from a repeatable prompt workflow.",
@@ -86,6 +87,7 @@
     },
     {
       platform: "TikTok",
+      variant: "sprint",
       title: "Niche content sprint",
       description:
         "A future embed slot for turning one project insight into multiple sharp video angles.",
@@ -93,6 +95,7 @@
     },
     {
       platform: "X",
+      variant: "thread",
       title: "Workflow breakdown",
       description:
         "A future thread slot for showing how prompts, angles, and production steps connect.",
@@ -122,5 +125,4 @@
     },
   ],
 };
-
 
