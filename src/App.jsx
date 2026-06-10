@@ -108,7 +108,7 @@ function SiteHeader() {
           href="#booking"
           className="hidden min-h-10 shrink-0 items-center justify-center rounded-full bg-ion px-4 text-xs font-bold text-void shadow-glow transition hover:-translate-y-0.5 hover:bg-white sm:inline-flex sm:px-5 sm:text-sm"
         >
-          Work With Me
+          Build My Growth System
         </a>
       </div>
     </header>
@@ -123,7 +123,7 @@ function MobileStickyCta() {
           href="#booking"
           className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full bg-ion px-4 text-sm font-bold text-void shadow-glow"
         >
-          Work With Me
+          Build My Growth System
         </a>
         <a
           href="#prompt-pack"
@@ -181,7 +181,7 @@ function Hero() {
             <Sparkles className="h-4 w-4" />
             {hero.eyebrow}
           </a>
-          <h1 className="max-w-[12ch] text-balance font-display text-5xl font-semibold leading-[0.98] text-white sm:max-w-4xl sm:text-7xl lg:text-8xl xl:text-9xl">
+          <h1 className="max-w-[15ch] text-balance font-display text-5xl font-semibold leading-[0.98] text-white sm:max-w-5xl sm:text-6xl lg:text-7xl xl:text-8xl">
             {hero.headline}
           </h1>
           <p className="mt-5 max-w-3xl font-display text-xl font-semibold leading-8 text-ion sm:text-3xl sm:leading-10">
@@ -199,14 +199,14 @@ function Hero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button href="#booking" variant="primary">
               <Play className="h-5 w-5" />
-              Work With Me
+              Build My Growth System
             </Button>
             <Button href="#prompt-pack" variant="secondary">
               <Download className="h-5 w-5" />
-              Download Free AI Marketing Starter Kit
+              Get the Free Starter Kit
             </Button>
             <Button href="#case-studies" variant="ghost">
-              View Case Studies
+              View Proof
               <ArrowRight className="h-5 w-5" />
             </Button>
           </div>
@@ -214,11 +214,11 @@ function Hero() {
             <span className="font-semibold text-white">
               {brand.realName} = {brand.name}.
             </span>{" "}
-            Marketing execution such as websites, ads, lead generation, and business support lives at{" "}
+            Marketing execution such as websites, ads, lead generation, and business support still lives at{" "}
             <a href={crystalUrl} className="font-semibold text-ion hover:text-white" target="_blank" rel="noreferrer">
               Crystal Digital / Crystal Branding Studio
             </a>
-            . This page is the official identity hub for AI marketing systems, storytelling strategy, and the $1000 AI Day.
+            . This page is for building the strategy, story, and systems that help attention turn into sales.
           </div>
           <p className="mt-6 max-w-2xl text-sm leading-6 text-slate-300">
             {hero.trust}
@@ -488,7 +488,7 @@ function AboutSection() {
   const { about, brand } = siteContent;
 
   return (
-    <Section id="about" eyebrow="Identity Hub">
+    <Section id="about" eyebrow="For Better Marketing">
       <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
         <div>
           <h2 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
@@ -510,11 +510,11 @@ function AboutSection() {
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Button href="#services" variant="primary">
-              Explore Services
+              See What Gets Fixed
               <ArrowRight className="h-5 w-5" />
             </Button>
             <Button href="#case-studies" variant="secondary">
-              View Case Studies
+              View Proof
             </Button>
           </div>
         </div>
@@ -547,7 +547,7 @@ function AboutSection() {
             </article>
           ))}
           <div className="rounded-[28px] border border-ember/20 bg-ember/[0.07] p-6 text-base leading-7 text-slate-200 backdrop-blur-xl">
-            <span className="font-semibold text-white">Search clarity:</span> Marlon Kuvawoga, Mr Savannah, and AI marketing systems in Zimbabwe all point to the same personal brand identity.
+            <span className="font-semibold text-white">Simply put:</span> Mr Savannah is where Marlon Kuvawoga helps businesses in Zimbabwe and beyond connect clearer stories, smarter systems, and better conversion.
           </div>
         </div>
       </div>
@@ -574,14 +574,14 @@ function ServicesSection() {
       <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
         <div>
           <h2 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
-            AI marketing systems, brand strategy, and storytelling built for conversion.
+            Build the machine behind your marketing, not just more content.
           </h2>
           <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">
-            This is the strategic layer behind better content, stronger leads, clearer offers, and sales conversations that do not feel forced.
+            Most businesses do not need more random content. They need clearer offers, better stories, stronger follow-up, and systems that turn attention into sales.
           </p>
         </div>
         <Button href="#booking" variant="ghost">
-          Contact / Book
+          Build My System
           <ArrowRight className="h-5 w-5" />
         </Button>
       </div>
@@ -610,7 +610,7 @@ function ServicesSection() {
         <a href={crystalUrl} className="font-semibold text-ion hover:text-white" target="_blank" rel="noreferrer">
           Crystal Digital / Crystal Branding Studio
         </a>
-        . Mr Savannah is the personal strategy and AI systems identity hub.
+        . Mr Savannah is where the strategy, story, and AI systems are built before the execution begins.
       </div>
     </Section>
   );
@@ -622,11 +622,11 @@ function CaseStudiesSection() {
       <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
         <div>
           <h2 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
-            Work shaped around strategy, systems, and online packaging.
+            Proof that ideas can become systems.
           </h2>
         </div>
         <p className="text-lg leading-8 text-slate-300">
-          These project slots create a clean foundation for future case studies while helping search engines connect Mr Savannah with brand strategy, AI marketing systems, pharmacy tech, and digital growth projects in Zimbabwe.
+          Business owners do not need more theories. These projects show how communication, positioning, AI workflows, and conversion thinking can become practical systems.
         </p>
       </div>
 
@@ -682,19 +682,13 @@ function WhySection() {
       <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-center">
         <div>
           <h2 className="max-w-3xl font-display text-4xl font-semibold leading-tight sm:text-5xl">
-            The bottleneck is rarely ideas. It is the system that turns ideas
-            into output.
+            The goal is not to post more. The goal is to build a machine that turns attention into sales.
           </h2>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-            Everyone wants more time, but most people do not know the workflows
-            that create it. Social media growth feels intimidating because the
-            content is random, the production path is unclear, and every post
-            starts from zero.
+            Most businesses are not short of ideas. They are stuck because the offer is unclear, the story is scattered, and every lead depends on manual chasing.
           </p>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
-            Attention spans are getting shorter, so volume and quality have to
-            move together. The answer is systems. Content is king, but systems
-            are the crown factory.
+            Good marketing makes people understand your value before you beg them to buy. AI helps you move faster, but the human edge is still the story, psychology, trust, and follow-up behind the system.
           </p>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             <div className="rounded-2xl border border-ember/20 bg-ember/[0.07] p-4">
@@ -702,8 +696,7 @@ function WhySection() {
                 Without a system
               </p>
               <p className="mt-3 text-sm leading-6 text-slate-300">
-                Random content, slow production, weak angles, and inconsistent
-                output.
+                Random content, weak offers, lost leads, unclear follow-up, and sales conversations that never start.
               </p>
             </div>
             <div className="rounded-2xl border border-ion/25 bg-ion/[0.07] p-4">
@@ -711,8 +704,7 @@ function WhySection() {
                 With a system
               </p>
               <p className="mt-3 text-sm leading-6 text-slate-300">
-                Clear prompts, reusable formats, stronger packaging, and faster
-                content volume.
+                Clearer stories, useful content, lead capture, follow-up flows, and conversion steps that work together.
               </p>
             </div>
           </div>
@@ -725,10 +717,10 @@ function WhySection() {
           <Orbit className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 animate-pulse-glow text-ion" />
 
           {[
-            ["Time", "top-8 left-8"],
-            ["Volume", "right-8 top-20"],
-            ["Quality", "bottom-20 left-8"],
-            ["Workflow", "bottom-8 right-8"],
+            ["Attention", "top-8 left-8"],
+            ["Trust", "right-8 top-20"],
+            ["Follow-up", "bottom-20 left-8"],
+            ["Revenue", "bottom-8 right-8"],
           ].map(([label, position]) => (
             <div
               key={label}
@@ -964,10 +956,10 @@ function MediaKitSection() {
         <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.055] p-6 shadow-glow backdrop-blur-2xl sm:p-8">
           <div className="pointer-events-none absolute -right-20 top-0 h-56 w-56 rounded-full bg-ion/10 blur-3xl" />
           <p className="text-xs font-bold uppercase tracking-[0.28em] text-ion">
-            Official identity
+            For conversations
           </p>
           <h2 className="mt-4 font-display text-4xl font-semibold leading-tight sm:text-5xl">
-            Media Kit for Marlon Kuvawoga / Mr Savannah
+            Podcasts, interviews, collaborations, and business conversations
           </h2>
           <div className="mt-6 grid gap-3">
             {mediaKit.facts.map(([label, value]) => (
@@ -986,10 +978,10 @@ function MediaKitSection() {
             <div className="flex h-full flex-col items-center justify-center text-center">
               <Sparkles className="h-9 w-9 text-ion" />
               <p className="mt-4 font-display text-2xl font-semibold text-white">
-                Headshot / brand asset slot
+                Media assets coming soon
               </p>
               <p className="mt-2 max-w-xs text-sm leading-6 text-slate-400">
-                Add official media photos, logos, downloads, or speaking assets here when ready.
+                Photos, logos, and interview resources will be added here.
               </p>
             </div>
           </div>
@@ -1030,14 +1022,14 @@ function MediaKitSection() {
           <div className="flex flex-col gap-4 rounded-[28px] border border-ion/20 bg-ion/[0.06] p-6 backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="font-display text-2xl font-semibold text-white">
-                Need a quote, interview, or collaboration?
+                For podcasts, interviews, collaborations, and growth conversations.
               </p>
               <p className="mt-2 text-sm leading-6 text-slate-300">
-                Contact {brand.realName} directly or use the social profile links once added.
+                Reach out for conversations around AI marketing, storytelling, communication psychology, and growth systems.
               </p>
             </div>
             <Button href="#booking" variant="primary">
-              Contact Marlon
+              Start the Conversation
             </Button>
           </div>
           <div className="flex flex-wrap gap-4 text-sm text-slate-400">
@@ -1056,14 +1048,14 @@ function MediaKitSection() {
 
 function FaqSection() {
   return (
-    <Section id="faq" eyebrow="Search / GEO FAQ">
+    <Section id="faq" eyebrow="Quick Answers">
       <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
         <div>
           <h2 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
             Quick Answers About Mr Savannah
           </h2>
           <p className="mt-5 text-lg leading-8 text-slate-300">
-            Clear answers for people, Google, and AI search engines trying to understand who Mr Savannah is, what Marlon Kuvawoga does, and how the brand connects to AI marketing systems in Zimbabwe.
+            Straight answers for business owners who want more leads, better content, stronger follow-up, and a clearer way to turn attention into sales.
           </p>
         </div>
         <div className="space-y-3">
@@ -1091,14 +1083,14 @@ function FaqSection() {
 
 function ResourcesSection() {
   return (
-    <Section id="resources" eyebrow="Resources Foundation">
+    <Section id="resources" eyebrow="Growth Library">
       <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
         <div>
           <h2 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
-            Future articles for search, AI discovery, and practical growth.
+            Practical guides for building smarter marketing systems.
           </h2>
           <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">
-            These resource slots create the foundation for SEO articles around Mr Savannah, Marlon Kuvawoga, AI marketing systems in Zimbabwe, storytelling strategy, and conversion systems.
+            These upcoming guides will help founders, SMEs, creators, and African businesses understand AI marketing systems, storytelling, lead generation, and conversion in plain language.
           </p>
         </div>
         <Button href="#prompt-pack" variant="ghost">
@@ -1114,7 +1106,7 @@ function ResourcesSection() {
             className="rounded-[26px] border border-white/10 bg-carbon/[0.7] p-6 backdrop-blur-xl transition hover:-translate-y-1 hover:border-volt/30 hover:bg-volt/[0.055]"
           >
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-volt">
-              Article placeholder
+              Coming guide
             </p>
             <h3 className="mt-4 font-display text-2xl font-semibold text-white">
               {resource.title}
@@ -1123,7 +1115,7 @@ function ResourcesSection() {
               {resource.intro}
             </p>
             <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-slate-500">
-              Draft slot
+              Coming soon
               <ArrowRight className="h-4 w-4" />
             </span>
           </article>
@@ -1188,12 +1180,9 @@ function BookingSection() {
           Book the build day
         </p>
         <h2 className="mt-4 font-display text-4xl font-semibold leading-tight sm:text-6xl">
-          Ready to turn your idea into an AI content system?
+          Ready to build the system behind your growth?
         </h2>
-        <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-          Send the project, niche, or offer you want to build around. I will
-          reply with the next step for booking the $1000 AI Day.
-        </p>
+        <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-300">Send the project, niche, or offer you want to package better. I will reply with the next step for booking the $1000 AI Day.</p>
         <div className="mx-auto mt-7 grid max-w-3xl gap-3 sm:grid-cols-3">
           {["One day", "$1000", "AI video system"].map((item) => (
             <div
@@ -1380,6 +1369,11 @@ function renderIcon(Icon, className) {
 }
 
 export default App;
+
+
+
+
+
 
 
 

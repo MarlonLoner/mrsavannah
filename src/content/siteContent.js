@@ -38,47 +38,47 @@
     videoUrl:
       "https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4",
     posterUrl: "/hero-poster.svg",
-    eyebrow: "Marlon Kuvawoga",
-    headline: "Mr Savannah",
-    descriptor: "AI Marketing Systems & Storytelling Strategy",
+    eyebrow: "AI Marketing Systems & Storytelling Strategy",
+    headline: "Turn attention into sales without constant selling.",
+    descriptor: "Mr Savannah / Marlon Kuvawoga",
     subheadline:
-      "I help businesses turn attention into sales using AI, storytelling, lead generation and conversion systems.",
+      "For founders, SMEs, service businesses, and creators who are tired of posting, chasing, and guessing. Build clearer stories, smarter lead systems, and follow-up flows that turn interest into real conversations.",
     intro:
-      "Marlon Kuvawoga, known as Mr Savannah, is a Zimbabwean brand strategist, AI marketing systems builder, storytelling/content strategist, and digital marketer based in Harare.",
+      "You do not need to post louder forever. You need a system where your offer, story, content, leads, follow-up, and sales conversations work together.",
     trust:
-      "For founders, creators, niche brands, service businesses, SMEs, and teams who know attention matters but need systems that convert it into sales.",
+      "Built for African businesses, founders, creators, SMEs, and teams that need clearer content, sales, and follow-up systems.",
     signals: [
-      "AI marketing systems",
-      "Storytelling strategy",
-      "Lead generation and conversion",
-      "Brand strategy in Zimbabwe",
+      "Clearer offers",
+      "Stories people understand",
+      "Lead systems that keep working",
+      "Follow-up that turns interest into revenue",
     ],
   },
   about: {
-    title: "About Marlon Kuvawoga / Mr Savannah",
+    title: "If people do not understand your value, they move on.",
     intro:
-      "Marlon Kuvawoga, popularly known as Mr Savannah, is a Zimbabwean brand strategist, AI marketing systems builder and storytelling creator based in Harare. He helps businesses turn attention into sales using AI, content psychology, lead generation and conversion systems.",
+      "If people do not understand your value, they will scroll past it, delay the decision, or choose someone louder. Marlon Kuvawoga, known as Mr Savannah, builds AI marketing systems and storytelling strategies that help businesses package their value, attract better leads, and convert attention into sales.",
     belief:
-      "Businesses do not just need more attention. They need systems that convert attention into sales.",
+      "Being visible is not enough. Attention must become trust, trust must become conversations, and conversations must become revenue.",
     why:
-      "The Mr Savannah brand exists to make modern business growth easier to understand: package the offer, tell the story clearly, build systems around attention, then turn that attention into measurable sales conversations.",
+      "Mr Savannah exists for business owners who are tired of random marketing. The work is to make your offer easier to understand, your story easier to believe, and your follow-up easier to act on so you are not manually chasing every lead forever.",
     groups: [
       {
-        title: "What I do",
+        title: "What gets fixed",
         items: [
-          "Build AI marketing and content systems",
-          "Design sharper brand and offer positioning",
-          "Create storytelling frameworks for online trust",
-          "Map lead generation and conversion workflows",
+          "Unclear offers that make people hesitate",
+          "Content that gets views but creates no sales conversations",
+          "Warm leads that disappear because follow-up is weak",
+          "Marketing that depends on you manually pushing every day",
         ],
       },
       {
-        title: "Who I help",
+        title: "Who this helps",
         items: [
-          "Founders and entrepreneurs",
-          "SMEs and service businesses",
-          "Creators and personal brands",
-          "Teams that need clearer content, sales, and follow-up systems",
+          "Founders and entrepreneurs building online",
+          "SMEs and service businesses that need better lead flow",
+          "Creators and personal brands turning attention into income",
+          "African teams that need clearer content, sales, and follow-up systems",
         ],
       },
     ],
@@ -87,54 +87,54 @@
     {
       title: "AI Marketing Systems",
       copy:
-        "Practical workflows that use AI to speed up planning, content production, customer messaging, and campaign execution.",
+        "Build repeatable systems where content, lead generation, follow-up, and conversion work together instead of living as random tasks.",
     },
     {
       title: "Brand Strategy",
       copy:
-        "Positioning, messaging, and story systems that make a business easier to understand, trust, and buy from.",
+        "Make your offer easier to understand, trust, and choose so people see the value before you beg them to buy.",
     },
     {
       title: "Lead Generation Systems",
       copy:
-        "Campaign paths and capture points designed to turn attention into qualified conversations.",
+        "Create entry points that bring interested people into your world and move them toward real conversations.",
     },
     {
-      title: "Conversion Scripts & Sales Follow-up",
+      title: "Conversion Scripts & Follow-Up",
       copy:
-        "Message flows, sales scripts, and follow-up sequences that help prospects move with less friction.",
+        "Stop losing warm leads because nobody knows what to say next. Build messages that guide people with clarity and confidence.",
     },
     {
-      title: "Content Strategy & Storytelling",
+      title: "Storytelling Content Strategy",
       copy:
-        "Content pillars, angles, hooks, and stories that make brands feel clear, useful, and memorable.",
+        "Turn your ideas, proof, customer problems, and lived experience into content people understand, remember, and feel.",
     },
     {
       title: "Website/Funnel Strategy",
       copy:
-        "Conversion-focused structure for pages, offers, and funnels. Full marketing execution can move through Crystal Digital.",
+        "Give attention somewhere useful to go after people click, with pages and funnels that explain, qualify, and convert.",
     },
     {
-      title: "AI Content Systems for Entrepreneurs and SMEs",
+      title: "AI Content Systems",
       copy:
-        "Repeatable prompt packs, video workflows, content calendars, and production routines for lean teams.",
+        "Create faster without losing your human edge. Use AI to sharpen ideas, prompts, scripts, videos, captions, and campaign angles.",
     },
   ],
   offerCards: [
     {
-      title: "Analyse the project",
+      title: "Find the real bottleneck",
       copy:
-        "Pressure-test the idea, audience, offer, bottlenecks, and strongest content angles before anything gets produced.",
+        "Clarify the offer, audience, story, and sales friction before creating more content that may not convert.",
     },
     {
-      title: "Package the offer online",
+      title: "Package the value online",
       copy:
-        "Shape the story, positioning, content pillars, and first impression so people understand the value faster.",
+        "Shape your message so people understand what you do, why it matters, and why they should choose you faster.",
     },
     {
       title: "Build the AI video workflow",
       copy:
-        "Design realistic AI video prompts, repeatable formats, and workflow steps you can reuse without guessing.",
+        "Create realistic AI video prompts, angles, scripts, and production steps you can repeat instead of guessing every week.",
     },
   ],
   leadMagnet: {
@@ -160,62 +160,68 @@
     {
       name: "Crystal Branding Studio / Crystal Digital",
       description:
-        "A brand and digital marketing studio built around websites, lead generation, ads, and business growth support.",
+        "A marketing execution studio for businesses that need websites, lead generation, ads, and ongoing digital growth support.",
       problem:
-        "Marketing-service demand needed a clear home separate from the Mr Savannah personal brand.",
+        "Business owners needed a clear place for done-for-you marketing without confusing it with the Mr Savannah AI systems offer.",
       solution:
-        "Position Crystal as the execution studio while Mr Savannah becomes the AI systems and strategy identity hub.",
-      impact: "Proof and deeper case study coming soon.",
+        "Separate the execution studio from the strategy brand so visitors know where to go for websites, ads, leads, or AI systems.",
+      impact:
+        "Expected transformation: cleaner positioning, better lead routing, and less confusion between strategy and execution.",
     },
     {
       name: "Mediclick",
       description:
-        "Digital health and pharmacy-adjacent project work focused on trust, convenience, and online visibility.",
+        "A health-focused digital project shaped around trust, convenience, and clearer customer action.",
       problem:
-        "Healthcare audiences need clarity, credibility, and simple digital actions.",
+        "Healthcare audiences need confidence before they click, ask questions, or choose a provider.",
       solution:
-        "Shape messaging, user journeys, and content angles around practical healthcare access.",
-      impact: "Impact metrics placeholder.",
+        "Build messaging and user journeys around credibility, simple explanations, and practical next steps.",
+      impact:
+        "Expected transformation: clearer online trust and easier customer decision-making.",
     },
     {
       name: "PORTIONS Pharmacy SaaS",
       description:
-        "A pharmacy software concept for improving operations, customer flow, and digital pharmacy systems.",
+        "A pharmacy SaaS concept for improving operations, customer relationships, and digital pharmacy growth.",
       problem:
-        "Pharmacies need better systems for growth, operations, and customer relationships.",
+        "Pharmacies need systems that reduce friction, improve follow-up, and make growth less manual.",
       solution:
-        "Package the SaaS idea with clearer workflows, positioning, and business-use storytelling.",
-      impact: "Product and case details coming soon.",
+        "Package the SaaS idea around operational workflows, customer communication, and practical pharmacy use cases.",
+      impact:
+        "Expected transformation: a clearer product story and stronger path from idea to market conversation.",
     },
     {
       name: "Eclipse FriendlyBot",
       description:
-        "An AI assistant concept focused on customer support, workflow help, and conversational automation.",
+        "An AI assistant concept designed to make repeated customer support and workflow tasks feel simpler.",
       problem:
-        "Teams lose time answering repeated questions and managing simple customer tasks manually.",
+        "Teams lose time answering the same questions and manually guiding people through simple steps.",
       solution:
-        "Design AI conversation flows that make automation feel useful, clear, and human.",
-      impact: "Demo and proof placeholder.",
+        "Design conversational flows that help customers get answers faster without removing the human feel.",
+      impact:
+        "Expected transformation: faster response systems and less manual pressure on teams.",
     },
     {
       name: "Mr Savannah AI Marketing Starter Kit",
       description:
-        "A free prompt pack that helps businesses create captions, offers, sales messages, and campaign angles faster.",
+        "A free prompt pack for creating captions, offers, sales messages, follow-up, and campaign angles faster.",
       problem:
-        "People waste time starting every marketing task from zero.",
+        "Business owners waste time starting every marketing task from zero.",
       solution:
-        "Turn repeat marketing tasks into prompt-led workflows that are easy to reuse.",
-      impact: "Available as a direct free download.",
+        "Turn repeat marketing needs into prompt-led workflows that help people write, plan, and sell with more clarity.",
+      impact:
+        "Available as a direct free download for founders, SMEs, creators, and service businesses.",
     },
     {
       name: "Studio Savannah / Savannah Studios",
       description:
-        "A future creative visibility space for brand storytelling, content systems, and AI-assisted production.",
+        "A future creative space for visual storytelling, AI-assisted production, and premium online packaging.",
       problem:
-        "Brands need modern content environments that feel premium, consistent, and scalable.",
+        "Brands need modern content environments that make production feel consistent, clear, and scalable.",
       solution:
-        "Build a studio identity around online packaging, AI content systems, and visual storytelling.",
-      impact: "Future build placeholder.",
+        "Develop a studio direction where creative assets, AI workflows, and brand storytelling support growth systems.",
+      impact:
+        "Expected transformation: stronger visual consistency and a more repeatable content production environment.",
     },
   ],
   checklist: [
@@ -254,15 +260,15 @@
   ],
   mediaKit: {
     shortBio:
-      "Marlon Kuvawoga, known as Mr Savannah, is a Zimbabwean brand strategist and AI marketing systems builder based in Harare.",
+      "Marlon Kuvawoga, known as Mr Savannah, helps founders, SMEs, creators, and African businesses turn attention into sales through AI marketing systems, storytelling strategy, and brand strategy from Harare, Zimbabwe.",
     longBio:
-      "Marlon Kuvawoga, popularly known as Mr Savannah, helps businesses turn attention into sales through AI marketing systems, storytelling strategy, lead generation, brand strategy, and conversion workflows. His work connects content psychology, online packaging, and practical digital systems for entrepreneurs, SMEs, creators, and growth-focused teams in Zimbabwe and beyond.",
+      "Marlon Kuvawoga, popularly known as Mr Savannah, works with businesses that need more than visibility. His work connects AI marketing systems, communication psychology, storytelling, brand strategy, lead generation, and conversion follow-up so business owners can move faster without losing the human edge that makes people trust them.",
     topics: [
       "AI marketing systems for African businesses",
-      "Storytelling that turns attention into sales",
-      "Brand strategy and online packaging",
-      "Lead generation and conversion follow-up",
-      "How SMEs can use AI without losing the human edge",
+      "Turning attention into trust, conversations, and revenue",
+      "Storytelling, communication psychology, and brand strategy",
+      "Lead generation and follow-up systems for SMEs",
+      "Using AI to move faster without losing the human edge",
     ],
     facts: [
       ["Official name", "Marlon Kuvawoga"],
@@ -273,34 +279,34 @@
   },
   faqs: [
     {
-      question: "Who is Mr Savannah?",
+      question: "How can I get more leads without posting all day?",
       answer:
-        "Mr Savannah is the public personal brand of Marlon Kuvawoga, a Zimbabwean brand strategist, AI marketing systems builder, storytelling strategist, and digital marketer based in Harare.",
+        "You need a system, not just more posts. Mr Savannah helps businesses connect clearer offers, useful content, lead capture, follow-up, and sales conversations so attention has somewhere to go.",
+    },
+    {
+      question: "Why is my content getting attention but not sales?",
+      answer:
+        "Attention does not become revenue by itself. If your offer is unclear, your story is weak, or your follow-up is missing, people may watch and still never buy. The system has to move people from interest to trust to conversation.",
+    },
+    {
+      question: "How can AI help my business market better?",
+      answer:
+        "AI can help you plan faster, create better prompts, generate content angles, write follow-up messages, build sales scripts, and produce more consistent marketing without removing your human insight.",
+    },
+    {
+      question: "What does Mr Savannah help businesses build?",
+      answer:
+        "Mr Savannah helps businesses build AI marketing systems, storytelling strategies, brand positioning, content workflows, lead generation paths, and conversion follow-up systems.",
     },
     {
       question: "Who is Marlon Kuvawoga?",
       answer:
-        "Marlon Kuvawoga is a Zimbabwean brand strategist and AI marketing systems builder who helps businesses turn attention into sales using AI, content psychology, lead generation, and conversion systems.",
-    },
-    {
-      question: "What does Mr Savannah do?",
-      answer:
-        "Mr Savannah designs AI marketing systems, storytelling strategies, brand positioning, content workflows, lead generation systems, and conversion scripts for entrepreneurs, SMEs, creators, and service businesses.",
+        "Marlon Kuvawoga, known as Mr Savannah, is a Zimbabwean brand strategist, AI marketing systems builder, storytelling strategist, and digital marketer based in Harare, Zimbabwe.",
     },
     {
       question: "Where is Mr Savannah based?",
       answer:
-        "Mr Savannah, Marlon Kuvawoga, is based in Harare, Zimbabwe and works with businesses that want clearer online packaging, stronger content systems, and better conversion workflows.",
-    },
-    {
-      question: "What is AI marketing systems strategy?",
-      answer:
-        "AI marketing systems strategy is the process of using artificial intelligence, prompts, content workflows, sales messaging, and conversion steps to produce better marketing output faster and more consistently.",
-    },
-    {
-      question: "How can businesses in Zimbabwe use AI for marketing?",
-      answer:
-        "Businesses in Zimbabwe can use AI to create content ideas, write better captions, build sales follow-up scripts, generate video concepts, understand customers, and create repeatable workflows for marketing and lead generation.",
+        "Mr Savannah is based in Harare, Zimbabwe and works with founders, SMEs, creators, service businesses, and African businesses trying to grow online.",
     },
     {
       question: "How do I work with Mr Savannah?",
@@ -312,17 +318,17 @@
     {
       title: "Who Is Mr Savannah?",
       intro:
-        "A future profile article explaining the public brand, the mission, and how Mr Savannah helps businesses use systems to sell with more clarity.",
+        "A future guide for business owners who want to understand how Mr Savannah helps turn attention into sales through AI marketing systems and storytelling strategy.",
     },
     {
       title: "Who Is Marlon Kuvawoga?",
       intro:
-        "A future identity article connecting Marlon Kuvawoga to brand strategy, storytelling, AI marketing systems, and digital marketing in Zimbabwe.",
+        "A future profile connecting Marlon Kuvawoga to brand strategy, AI marketing systems, storytelling, and digital marketing in Zimbabwe.",
     },
     {
       title: "AI Marketing Systems in Zimbabwe",
       intro:
-        "A practical guide for Zimbabwean entrepreneurs and SMEs that want to use AI without making their marketing feel generic.",
+        "A practical guide for Zimbabwean entrepreneurs and SMEs that want to use AI to move faster without sounding generic.",
     },
     {
       title: "How Zimbabwean Businesses Can Use AI for Marketing",
@@ -332,41 +338,39 @@
     {
       title: "How Pharmacies in Zimbabwe Can Grow Online",
       intro:
-        "A future niche breakdown for pharmacy brands that want better digital visibility, customer trust, and follow-up systems.",
+        "A future niche breakdown for pharmacy brands that want better visibility, customer trust, and follow-up systems.",
     },
     {
       title: "Why Brands Need Systems, Not Just Content",
       intro:
-        "A future essay on the difference between random posting and a repeatable business growth system.",
+        "A future essay on why posting more is not the same as building a machine where content, leads, follow-up, and conversion work together.",
     },
     {
       title: "How Storytelling Turns Attention Into Sales",
       intro:
-        "A future resource on using narrative, customer insight, and conversion psychology to make content more commercially useful.",
+        "A future resource on using narrative, customer insight, and conversion psychology to make content commercially useful.",
     },
   ],
   visibilitySlots: [
     {
       title: "Featured AI Tool",
       description:
-        "Reserved for software, models, or creative tools that deserve premium attention.",
+        "Reserved for useful tools that help businesses create, communicate, sell, or follow up better.",
     },
     {
       title: "Client Spotlight",
       description:
-        "Reserved for projects shaped through AI content systems and stronger online packaging.",
+        "Reserved for businesses using stronger systems to turn attention, content, and leads into sales conversations.",
     },
     {
       title: "Brand Partner",
       description:
-        "Reserved for aligned brands building at the edge of creativity, systems, and distribution.",
+        "Reserved for aligned brands building at the edge of creativity, systems, communication, and growth.",
     },
     {
       title: "Sponsored Visibility Slot",
       description:
-        "Reserved for curated promotions that fit the Mr Savannah audience and standard.",
+        "Reserved for curated promotions that fit founders, SMEs, creators, and businesses building online.",
     },
   ],
 };
-
-
