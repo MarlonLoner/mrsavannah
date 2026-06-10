@@ -1,0 +1,10 @@
+﻿{
+  "name": "Mr Savannah | Marlon Kuvawoga",
+  "short_name": "Mr Savannah",
+  "description": "AI marketing systems, storytelling strategy and brand strategy by Marlon Kuvawoga in Harare, Zimbabwe.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#05060c",
+  "theme_color": "#60f4ff"
+}

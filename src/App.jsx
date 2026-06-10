@@ -19,6 +19,7 @@ import {
   Zap,
 } from "lucide-react";
 import { siteContent } from "./content/siteContent";
+import { structuredData } from "./content/seoContent";
 
 const crystalUrl = siteContent.brand.crystalUrl;
 const whatsappUrl = `https://wa.me/${siteContent.brand.whatsappNumber}?text=${encodeURIComponent(
@@ -31,18 +32,49 @@ const emailUrl = `mailto:${siteContent.brand.email}?subject=${encodeURIComponent
 function App() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-void pb-20 font-body text-white sm:pb-0">
+      <SeoStructuredData />
       <SiteHeader />
       <Hero />
       <OfferSection />
       <LeadMagnetSection />
+      <AboutSection />
+      <ServicesSection />
+      <CaseStudiesSection />
       <WhySection />
       <WhatYouGetSection />
       <ExperimentsSection />
+      <MediaKitSection />
+      <FaqSection />
+      <ResourcesSection />
       <VisibilitySection />
       <BookingSection />
       <Footer />
       <MobileStickyCta />
     </main>
+  );
+}
+
+function SeoStructuredData() {
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: siteContent.faqs.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify([...structuredData, faqStructuredData]),
+      }}
+    />
   );
 }
 
@@ -59,31 +91,24 @@ function SiteHeader() {
               Mr Savannah
             </span>
             <span className="mt-1 hidden text-[11px] uppercase tracking-[0.22em] text-slate-500 sm:block">
-              $1000 AI Day
+              Marlon Kuvawoga
             </span>
           </span>
         </a>
 
-        <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-300 md:flex">
-          <a className="transition hover:text-white" href="#offer">
-            Offer
-          </a>
-          <a className="transition hover:text-white" href="#prompt-pack">
-            Free Pack
-          </a>
-          <a className="transition hover:text-white" href="#deliverables">
-            Deliverables
-          </a>
-          <a className="transition hover:text-white" href="#experiments">
-            Experiments
-          </a>
+        <nav className="hidden items-center gap-4 text-xs font-semibold text-slate-300 lg:flex xl:gap-5 xl:text-sm">
+          {siteContent.navigation.map((item) => (
+            <a key={item.href} className="transition hover:text-white" href={item.href}>
+              {item.label}
+            </a>
+          ))}
         </nav>
 
         <a
           href="#booking"
           className="hidden min-h-10 shrink-0 items-center justify-center rounded-full bg-ion px-4 text-xs font-bold text-void shadow-glow transition hover:-translate-y-0.5 hover:bg-white sm:inline-flex sm:px-5 sm:text-sm"
         >
-          Book AI Day
+          Work With Me
         </a>
       </div>
     </header>
@@ -98,15 +123,13 @@ function MobileStickyCta() {
           href="#booking"
           className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full bg-ion px-4 text-sm font-bold text-void shadow-glow"
         >
-          Book AI Day
+          Work With Me
         </a>
         <a
-          href={whatsappUrl}
+          href="#prompt-pack"
           className="inline-flex min-h-12 flex-1 items-center justify-center rounded-full border border-white/[0.15] bg-white/[0.08] px-4 text-sm font-bold text-white"
-          target="_blank"
-          rel="noreferrer"
         >
-          WhatsApp
+          Free Pack
         </a>
       </div>
     </div>
@@ -114,7 +137,7 @@ function MobileStickyCta() {
 }
 
 function Hero() {
-  const { hero } = siteContent;
+  const { brand, hero } = siteContent;
 
   return (
     <section
@@ -124,7 +147,7 @@ function Hero() {
       <img
         className="absolute inset-0 h-full w-full object-cover opacity-[0.34] saturate-150"
         src={hero.posterUrl}
-        alt=""
+        alt="Futuristic AI command center background for Mr Savannah"
         aria-hidden="true"
       />
       <video
@@ -152,37 +175,50 @@ function Hero() {
       >
         <div className="w-full min-w-0 max-w-[22rem] sm:max-w-4xl">
           <a
-            href="#booking"
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-ion/25 bg-ion/[0.08] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-ion shadow-glow backdrop-blur-md transition hover:border-ion/50 hover:bg-ion/10"
+            href="#about"
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-ion/25 bg-ion/[0.08] px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-ion shadow-glow backdrop-blur-md transition hover:border-ion/50 hover:bg-ion/10"
           >
             <Sparkles className="h-4 w-4" />
-            Flagship $1000 AI Day
+            {hero.eyebrow}
           </a>
-          <h1 className="max-w-[13ch] text-balance font-display text-4xl font-semibold leading-[1.02] text-white sm:max-w-4xl sm:text-6xl lg:text-7xl xl:text-8xl">
+          <h1 className="max-w-[12ch] text-balance font-display text-5xl font-semibold leading-[0.98] text-white sm:max-w-4xl sm:text-7xl lg:text-8xl xl:text-9xl">
             {hero.headline}
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-7 text-slate-200 sm:text-xl sm:leading-8">
+          <p className="mt-5 max-w-3xl font-display text-xl font-semibold leading-8 text-ion sm:text-3xl sm:leading-10">
+            {hero.descriptor}
+          </p>
+          <p className="mt-5 max-w-2xl text-base leading-7 text-slate-200 sm:text-xl sm:leading-8">
             {hero.subheadline}
+          </p>
+          <p className="mt-4 max-w-2xl rounded-2xl border border-white/10 bg-white/[0.055] p-4 text-sm font-semibold leading-6 text-white backdrop-blur-xl sm:text-base">
+            {brand.tagline}
           </p>
 
           <HeroSignalStrip signals={hero.signals} />
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button href="#booking" variant="primary">
               <Play className="h-5 w-5" />
-              Book the $1000 AI Day
+              Work With Me
             </Button>
-            <Button href={crystalUrl} variant="secondary" external>
-              Need websites or ads? Crystal Digital
-              <ExternalLink className="h-5 w-5" />
+            <Button href="#prompt-pack" variant="secondary">
+              <Download className="h-5 w-5" />
+              Download Free AI Marketing Starter Kit
+            </Button>
+            <Button href="#case-studies" variant="ghost">
+              View Case Studies
+              <ArrowRight className="h-5 w-5" />
             </Button>
           </div>
-          <div className="mt-5 max-w-2xl rounded-2xl border border-white/10 bg-white/[0.055] p-4 text-sm leading-6 text-slate-300 backdrop-blur-xl">
+          <div className="mt-5 max-w-2xl rounded-2xl border border-white/10 bg-void/[0.54] p-4 text-sm leading-6 text-slate-300 backdrop-blur-xl">
             <span className="font-semibold text-white">
-              One page. One offer.
+              {brand.realName} = {brand.name}.
             </span>{" "}
-            Marketing service leads go to Crystal Digital. This page is only
-            for packaging your project and building the AI content system.
+            Marketing execution such as websites, ads, lead generation, and business support lives at{" "}
+            <a href={crystalUrl} className="font-semibold text-ion hover:text-white" target="_blank" rel="noreferrer">
+              Crystal Digital / Crystal Branding Studio
+            </a>
+            . This page is the official identity hub for AI marketing systems, storytelling strategy, and the $1000 AI Day.
           </div>
           <p className="mt-6 max-w-2xl text-sm leading-6 text-slate-300">
             {hero.trust}
@@ -446,6 +482,198 @@ function DownloadButton({ href, icon: Icon, label }) {
       {renderIcon(Icon, "h-5 w-5")}
       {label}
     </a>
+  );
+}
+function AboutSection() {
+  const { about, brand } = siteContent;
+
+  return (
+    <Section id="about" eyebrow="Identity Hub">
+      <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+        <div>
+          <h2 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
+            {about.title}
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-slate-300">
+            {about.intro}
+          </p>
+          <div className="mt-6 rounded-3xl border border-ion/20 bg-ion/[0.07] p-5 shadow-glow backdrop-blur-xl">
+            <p className="text-xs font-bold uppercase tracking-[0.26em] text-ion">
+              Core belief
+            </p>
+            <p className="mt-3 font-display text-2xl font-semibold leading-snug text-white">
+              {about.belief}
+            </p>
+          </div>
+          <p className="mt-5 text-base leading-7 text-slate-300">
+            {about.why}
+          </p>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <Button href="#services" variant="primary">
+              Explore Services
+              <ArrowRight className="h-5 w-5" />
+            </Button>
+            <Button href="#case-studies" variant="secondary">
+              View Case Studies
+            </Button>
+          </div>
+        </div>
+
+        <div className="grid gap-4">
+          {about.groups.map((group) => (
+            <article
+              key={group.title}
+              className="rounded-[28px] border border-white/10 bg-white/[0.055] p-6 backdrop-blur-xl transition hover:-translate-y-1 hover:border-ion/25 hover:bg-white/[0.08]"
+            >
+              <div className="mb-5 flex items-center justify-between gap-4">
+                <h3 className="font-display text-2xl font-semibold text-white">
+                  {group.title}
+                </h3>
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-ion/25 bg-ion/10 text-ion">
+                  <Sparkles className="h-6 w-6" />
+                </span>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {group.items.map((item) => (
+                  <div
+                    key={item}
+                    className="flex min-h-14 items-start gap-3 rounded-2xl border border-white/10 bg-carbon/70 p-4 text-sm leading-6 text-slate-200"
+                  >
+                    <Check className="mt-1 h-4 w-4 shrink-0 text-ion" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))}
+          <div className="rounded-[28px] border border-ember/20 bg-ember/[0.07] p-6 text-base leading-7 text-slate-200 backdrop-blur-xl">
+            <span className="font-semibold text-white">Search clarity:</span> Marlon Kuvawoga, Mr Savannah, and AI marketing systems in Zimbabwe all point to the same personal brand identity.
+          </div>
+        </div>
+      </div>
+      <p className="sr-only">
+        {brand.realName}, also known as {brand.name}, is based in {brand.location}.
+      </p>
+    </Section>
+  );
+}
+
+function ServicesSection() {
+  const serviceIcons = [
+    BrainCircuit,
+    Target,
+    Radar,
+    MessageCircle,
+    Sparkles,
+    Workflow,
+    PackageCheck,
+  ];
+
+  return (
+    <Section id="services" eyebrow="Services / AI Marketing Systems">
+      <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+        <div>
+          <h2 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
+            AI marketing systems, brand strategy, and storytelling built for conversion.
+          </h2>
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">
+            This is the strategic layer behind better content, stronger leads, clearer offers, and sales conversations that do not feel forced.
+          </p>
+        </div>
+        <Button href="#booking" variant="ghost">
+          Contact / Book
+          <ArrowRight className="h-5 w-5" />
+        </Button>
+      </div>
+
+      <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {siteContent.services.map((service, index) => (
+          <article
+            key={service.title}
+            className="group min-h-[250px] rounded-[28px] border border-white/10 bg-white/[0.055] p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-ion/30 hover:bg-ion/[0.07] hover:shadow-glow"
+          >
+            <div className="mb-7 grid h-14 w-14 place-items-center rounded-2xl border border-ion/25 bg-ion/10 text-ion transition group-hover:scale-105">
+              {renderIcon(serviceIcons[index] || Sparkles, "h-7 w-7")}
+            </div>
+            <h3 className="font-display text-2xl font-semibold text-white">
+              {service.title}
+            </h3>
+            <p className="mt-4 text-base leading-7 text-slate-300">
+              {service.copy}
+            </p>
+          </article>
+        ))}
+      </div>
+
+      <div className="mt-8 rounded-3xl border border-white/10 bg-void/[0.48] p-5 text-sm leading-6 text-slate-300 backdrop-blur-xl sm:p-6">
+        Need full execution for websites, ads, or ongoing marketing delivery? That work belongs under{" "}
+        <a href={crystalUrl} className="font-semibold text-ion hover:text-white" target="_blank" rel="noreferrer">
+          Crystal Digital / Crystal Branding Studio
+        </a>
+        . Mr Savannah is the personal strategy and AI systems identity hub.
+      </div>
+    </Section>
+  );
+}
+
+function CaseStudiesSection() {
+  return (
+    <Section id="case-studies" eyebrow="Case Studies / Work">
+      <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <div>
+          <h2 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
+            Work shaped around strategy, systems, and online packaging.
+          </h2>
+        </div>
+        <p className="text-lg leading-8 text-slate-300">
+          These project slots create a clean foundation for future case studies while helping search engines connect Mr Savannah with brand strategy, AI marketing systems, pharmacy tech, and digital growth projects in Zimbabwe.
+        </p>
+      </div>
+
+      <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {siteContent.caseStudies.map((project) => (
+          <article
+            key={project.name}
+            className="group flex min-h-[430px] flex-col rounded-[28px] border border-white/10 bg-carbon/[0.72] p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-plasma/35 hover:bg-white/[0.07] hover:shadow-[0_24px_80px_rgba(143,125,255,0.12)]"
+          >
+            <div className="mb-5 flex items-center justify-between gap-4">
+              <span className="rounded-full border border-plasma/25 bg-plasma/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-plasma">
+                Project
+              </span>
+              <BadgeCheck className="h-5 w-5 text-ion" />
+            </div>
+            <h3 className="font-display text-2xl font-semibold text-white">
+              {project.name}
+            </h3>
+            <p className="mt-3 text-sm leading-6 text-slate-300">
+              {project.description}
+            </p>
+            <div className="mt-5 space-y-4 text-sm leading-6">
+              <CaseStudyPoint label="Problem" value={project.problem} />
+              <CaseStudyPoint label="Solution" value={project.solution} />
+              <CaseStudyPoint label="Proof / Impact" value={project.impact} />
+            </div>
+            <div className="mt-auto pt-6">
+              <span className="inline-flex items-center gap-2 text-sm font-semibold text-slate-400">
+                Coming soon
+                <ArrowRight className="h-4 w-4" />
+              </span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+function CaseStudyPoint({ label, value }) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-4">
+      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-ion">
+        {label}
+      </p>
+      <p className="mt-2 text-slate-300">{value}</p>
+    </div>
   );
 }
 function WhySection() {
@@ -727,6 +955,183 @@ function ThumbnailShimmer() {
   );
 }
 
+function MediaKitSection() {
+  const { brand, mediaKit } = siteContent;
+
+  return (
+    <Section id="media" eyebrow="Media / Press Kit">
+      <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
+        <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.055] p-6 shadow-glow backdrop-blur-2xl sm:p-8">
+          <div className="pointer-events-none absolute -right-20 top-0 h-56 w-56 rounded-full bg-ion/10 blur-3xl" />
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-ion">
+            Official identity
+          </p>
+          <h2 className="mt-4 font-display text-4xl font-semibold leading-tight sm:text-5xl">
+            Media Kit for Marlon Kuvawoga / Mr Savannah
+          </h2>
+          <div className="mt-6 grid gap-3">
+            {mediaKit.facts.map(([label, value]) => (
+              <div
+                key={label}
+                className="flex flex-col gap-1 rounded-2xl border border-white/10 bg-carbon/70 p-4 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
+                  {label}
+                </span>
+                <span className="font-semibold text-white">{value}</span>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 aspect-[4/3] overflow-hidden rounded-3xl border border-dashed border-white/15 bg-[radial-gradient(circle_at_50%_35%,rgba(96,244,255,0.22),rgba(255,255,255,0.04)_42%,rgba(5,6,12,0.86)_80%)] p-5">
+            <div className="flex h-full flex-col items-center justify-center text-center">
+              <Sparkles className="h-9 w-9 text-ion" />
+              <p className="mt-4 font-display text-2xl font-semibold text-white">
+                Headshot / brand asset slot
+              </p>
+              <p className="mt-2 max-w-xs text-sm leading-6 text-slate-400">
+                Add official media photos, logos, downloads, or speaking assets here when ready.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid gap-5">
+          <article className="rounded-[28px] border border-white/10 bg-white/[0.055] p-6 backdrop-blur-xl">
+            <h3 className="font-display text-2xl font-semibold text-white">
+              Short bio
+            </h3>
+            <p className="mt-3 text-base leading-7 text-slate-300">
+              {mediaKit.shortBio}
+            </p>
+          </article>
+          <article className="rounded-[28px] border border-white/10 bg-white/[0.055] p-6 backdrop-blur-xl">
+            <h3 className="font-display text-2xl font-semibold text-white">
+              Long bio
+            </h3>
+            <p className="mt-3 text-base leading-7 text-slate-300">
+              {mediaKit.longBio}
+            </p>
+          </article>
+          <article className="rounded-[28px] border border-white/10 bg-white/[0.055] p-6 backdrop-blur-xl">
+            <h3 className="font-display text-2xl font-semibold text-white">
+              Topics I speak and write about
+            </h3>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {mediaKit.topics.map((topic) => (
+                <div
+                  key={topic}
+                  className="rounded-2xl border border-white/10 bg-carbon/70 p-4 text-sm leading-6 text-slate-200"
+                >
+                  {topic}
+                </div>
+              ))}
+            </div>
+          </article>
+          <div className="flex flex-col gap-4 rounded-[28px] border border-ion/20 bg-ion/[0.06] p-6 backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="font-display text-2xl font-semibold text-white">
+                Need a quote, interview, or collaboration?
+              </p>
+              <p className="mt-2 text-sm leading-6 text-slate-300">
+                Contact {brand.realName} directly or use the social profile links once added.
+              </p>
+            </div>
+            <Button href="#booking" variant="primary">
+              Contact Marlon
+            </Button>
+          </div>
+          <div className="flex flex-wrap gap-4 text-sm text-slate-400">
+            <a href="#about" className="font-semibold text-ion hover:text-white">
+              About
+            </a>
+            {brand.socials.map((social) => (
+              <SocialLink key={social.label} social={social} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+function FaqSection() {
+  return (
+    <Section id="faq" eyebrow="Search / GEO FAQ">
+      <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
+        <div>
+          <h2 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
+            Quick Answers About Mr Savannah
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-slate-300">
+            Clear answers for people, Google, and AI search engines trying to understand who Mr Savannah is, what Marlon Kuvawoga does, and how the brand connects to AI marketing systems in Zimbabwe.
+          </p>
+        </div>
+        <div className="space-y-3">
+          {siteContent.faqs.map((item) => (
+            <details
+              key={item.question}
+              className="group rounded-2xl border border-white/10 bg-white/[0.055] p-5 backdrop-blur-xl transition hover:border-ion/25 hover:bg-white/[0.08]"
+            >
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg font-semibold text-white">
+                {item.question}
+                <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-ion/20 bg-ion/10 text-ion transition group-open:rotate-45">
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </summary>
+              <p className="mt-4 text-base leading-7 text-slate-300">
+                {item.answer}
+              </p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+function ResourcesSection() {
+  return (
+    <Section id="resources" eyebrow="Resources Foundation">
+      <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+        <div>
+          <h2 className="font-display text-4xl font-semibold leading-tight sm:text-5xl">
+            Future articles for search, AI discovery, and practical growth.
+          </h2>
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">
+            These resource slots create the foundation for SEO articles around Mr Savannah, Marlon Kuvawoga, AI marketing systems in Zimbabwe, storytelling strategy, and conversion systems.
+          </p>
+        </div>
+        <Button href="#prompt-pack" variant="ghost">
+          Download Starter Kit
+          <Download className="h-5 w-5" />
+        </Button>
+      </div>
+
+      <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {siteContent.resources.map((resource) => (
+          <article
+            key={resource.title}
+            className="rounded-[26px] border border-white/10 bg-carbon/[0.7] p-6 backdrop-blur-xl transition hover:-translate-y-1 hover:border-volt/30 hover:bg-volt/[0.055]"
+          >
+            <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-volt">
+              Article placeholder
+            </p>
+            <h3 className="mt-4 font-display text-2xl font-semibold text-white">
+              {resource.title}
+            </h3>
+            <p className="mt-3 text-sm leading-6 text-slate-300">
+              {resource.intro}
+            </p>
+            <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-slate-500">
+              Draft slot
+              <ArrowRight className="h-4 w-4" />
+            </span>
+          </article>
+        ))}
+      </div>
+    </Section>
+  );
+}
 function VisibilitySection() {
   return (
     <Section id="visibility" eyebrow="Future Visibility">
@@ -822,8 +1227,7 @@ function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div>
           <p>
-            &copy; {brand.year} {brand.name}. AI content systems for people building
-            online.
+            &copy; {brand.year} {brand.name} / {brand.realName}. AI marketing systems and storytelling strategy for people building online.
           </p>
           <p className="mt-2">
             Marketing services live at{" "}
@@ -837,10 +1241,19 @@ function Footer() {
             </a>
           </p>
         </div>
-        <div className="flex flex-wrap gap-4">
-          {brand.socials.map((social) => (
-            <SocialLink key={social.label} social={social} />
-          ))}
+        <div className="flex flex-col gap-4 md:items-end">
+          <nav className="flex flex-wrap gap-4" aria-label="Footer navigation">
+            {siteContent.navigation.map((item) => (
+              <a key={item.href} href={item.href} className="hover:text-white">
+                {item.label}
+              </a>
+            ))}
+          </nav>
+          <div className="flex flex-wrap gap-4 md:justify-end">
+            {brand.socials.map((social) => (
+              <SocialLink key={social.label} social={social} />
+            ))}
+          </div>
         </div>
       </div>
     </footer>
@@ -967,4 +1380,15 @@ function renderIcon(Icon, className) {
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
 

@@ -1,0 +1,5 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://mrsavannah.vercel.app/sitemap.xml
+
